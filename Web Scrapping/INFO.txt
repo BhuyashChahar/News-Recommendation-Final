@@ -1,0 +1,2 @@
+These are the scrapping notebooks used for creating csv files or storing scraped articles directly to mongoDB.
+Articles in csv are further processed by "Corpus_Exploration_and_Cleaning_Functions.ipynb".

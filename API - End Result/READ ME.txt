@@ -1,0 +1,8 @@
+Install the required python libraries given in requirements.txt
+
+Create a mongoDB database named 'News_Recommender', tables in the dataframe will be created on running scraping programs and flask server.
+
+For starting flask server in terminal change directory to the main.py directory and type "flask run" and enter
+
+Visit website on 127.0.0.1:5000
+

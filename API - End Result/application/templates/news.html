@@ -1,0 +1,28 @@
+    {% extends "layout.html" %}
+    
+    {% block content %}
+    
+    {% for news in newss %}
+    <h2>{{ news["Headline"] }}</h2>
+
+    <p>{{ news["Datetime"] }}</p>
+
+    <h4>{{ news["Author"] }}</h4>
+
+    <p>{{ news["Summary"] }}</p>
+
+    <br>
+
+    <p>Click below to know more:-
+       <br><a href="{{ news['News_Link'] }}">{{ news["News_Link"] }}</a>
+    </p>
+    
+    <br>
+    <p></p>
+
+    {% endfor %}
+
+
+    
+
+{% endblock %}

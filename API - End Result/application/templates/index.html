@@ -1,0 +1,54 @@
+{% extends "layout.html" %}
+
+{% block content %}
+    <div class="row">
+        <div class="col-md-12 text-center">
+            <h1>JhakaasNewsWaala</h1>
+
+            {% if session['username'] %}
+                <h3>Let's get started.</h3>
+            {% else %}
+                <p>Already registered? <a href="{{url_for('login') }}">Login</a></p>
+            {% endif %}
+
+            <form name="refresh" action="" method="post" novalidate>
+                <fieldset class="form-group">
+                    <legend>{{title}}</legend> 
+                    {{ form.hidden_tag() }}
+                    
+                    <p>
+                        {{ form.submit() }}
+                    </p>
+                </fieldset>
+            </form>
+
+
+            <div>
+                <table class="table table-hover">
+                    <thead>
+                    <tr>
+                        <th scope="col">Headline</th>
+                        <th scope="col">Author</th>
+                        <th scope="col">Category</th>
+                        <th scope="col">Datetime</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+        
+                    <!-- Construct the rest of courses here -->
+                    {% for recommendation in recommendations %}
+                    <tr>
+                        <td scope='row'><a href="{{url_for('news', headline=recommendation['Headline']) }}">{{ recommendation["Headline"] }}</a></td>
+                        <td>{{ recommendation["Author"] }}</td>
+                        <td>{{ recommendation["Category"] }}</td>
+                        <td>{{ recommendation["Datetime"] }}</td>
+                    </tr>
+                    {% endfor %}
+                    
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+    </div>
+{% endblock %}

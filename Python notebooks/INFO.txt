@@ -1,0 +1,3 @@
+These are Jupyter notebooks created individually by group members.
+
+Due lack of availability of clickstream data rating matrix could not generated, both bots used mock user dataframe, user-rating dataframe and bot based scoring to come up with recommendations.

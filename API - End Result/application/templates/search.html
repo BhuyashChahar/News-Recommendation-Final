@@ -1,0 +1,28 @@
+    {% extends "layout.html" %}
+    
+    {% block content %}
+    <div class="row">
+        <div class="col-md-6 offset-md-3">
+            <form name="search" action="" method="post" novalidate>
+                <fieldset class="form-group">
+                    <legend>{{title}}</legend> 
+                    {{ form.hidden_tag() }}
+
+                    <p>
+                        {{ form.phrase.label }}<br>
+                        {{ form.phrase(size=35) }}
+                        {% for error in form.phrase.errors %}
+                            <span class="error-message">{{ error }}</span>
+                        {% endfor %}
+                    </p>
+
+                    <p>
+                        {{ form.submit() }}
+                    </p>
+                </fieldset>
+            </form>
+        </div>
+
+    </div>
+
+{% endblock %}
